@@ -43,12 +43,12 @@ class AAUOC {
  Conference --|> Event
  BoardMeeting --|> Event
 
- AAUOC o-- Location
- AAUOC o-- Event
- Location -- Event
- AAUOC o-- Person
- Member -- Event
- Person -- Conference
- BoardMember -- BoardMeeting
+ AAUOC o--"0..*" Location
+ AAUOC o--"0..*" Event
+ Location "1"--"0..*" Event: isLocatedIn
+ AAUOC o--"0..*" Person
+ Member "0..*"--"0..*" Event: attendsTo
+ Person "0..*"--"0..*" Conference: attendsTo
+ BoardMember "0..*"--"0..*" BoardMeeting: attendsTo
 
 @enduml
