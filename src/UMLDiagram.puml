@@ -30,6 +30,12 @@ class AAUOC {
  Conference --> Event
  BoardMeeting --> Event
 
-
+ AAUOC o-- Location
+ AAUOC o-- Event
+ Location -- Event
+ AAUOC o-- Person
+ Member -- Event
+ Person -- Conference
+ BoardMember -- BoardMeeting
 
 @enduml
