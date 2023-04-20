@@ -23,4 +23,13 @@ class Location {
 
 class AAUOC {
 }
+
+ Member --> Person
+ BoardMember --> Member
+
+ Conference --> Event
+ BoardMeeting --> Event
+
+
+
 @enduml
