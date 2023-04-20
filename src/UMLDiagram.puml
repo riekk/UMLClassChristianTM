@@ -1,34 +1,47 @@
 @startuml
 
 class Person {
+{field}name: String
 }
 
 class Member {
+{field}email: String
 }
 
 class BoardMember {
 }
 
 class Event {
+{field}date: Date
+{field}description: String
+{method}assing(l: Location): void
 }
 
 class Conference {
+{field}max_attendees: Integer
 }
 
 class BoardMeeting {
 }
 
 class Location {
+{field}description: String
+{field}addres: String
 }
 
 class AAUOC {
+{method}newLocation(l: Location): void
+{method}newEvent(e : Event): void
+{method}newPerson(p : Person): void
+{method}informEvent(e: Event): void
+{method}register(m : Member, e : Event): void
 }
 
- Member --> Person
- BoardMember --> Member
+ Member --|> Person
+ BoardMember --|> Member
 
- Conference --> Event
- BoardMeeting --> Event
+ Conference --|> Event
+ BoardMeeting --|> Event
 
  AAUOC o-- Location
  AAUOC o-- Event
